@@ -39,17 +39,15 @@ app.get('/register', (req, res) => {
 
 //Registration handling
 app.post("/register", function (req, res) {
-    var username = req.body.username
-    var password = req.body.password
-    var email = req.body.email
-    User.register(new User({ username: username }),
-            password,email, function (err, user) {
-        if (err) {
-            console.log(err);
-            return res.render("register");
-        }
-              res.redirect("/admin");
-    });
+   try{ let username = req.body.username;
+    let password = req.body.password;
+    let email = req.body.email;
+    let role = "user";
+    let status = "pending";
+    User.create({ username: username, password, email, role, status })}
+    catch(error){
+        res.send(error);
+    }
   });
 
 //Login Form
