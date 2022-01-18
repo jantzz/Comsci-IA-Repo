@@ -1,0 +1,9 @@
+.top img{ 
+    float: left; 
+    align-items: center; 
+    width: 30px;
+    height: 10px;
+}
+.top { 
+    background-color:rgba(45, 45, 201, 0.6);
+}
